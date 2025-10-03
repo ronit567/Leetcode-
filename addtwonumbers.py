@@ -22,3 +22,20 @@ def addTwoNumbers(l1: ListNode, l2: ListNode) -> ListNode:
         if l2: l2 = l2.next
 
     return dummy.next
+
+
+def build_linked_list(nums):
+    dummy = ListNode(0)
+    current = dummy
+    for n in nums:
+        current.next = ListNode(n)
+        current = current.next
+    return dummy.next
+
+def print_linked_list(node):
+    vals = []
+    while node:
+        vals.append(node.val)
+        node = node.next
+    return vals
+
