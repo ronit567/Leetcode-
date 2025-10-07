@@ -1,6 +1,5 @@
 def int_to_roman(num: int) -> str:
     """Convert an integer to a Roman numeral."""
-
     roman_map = [
         ("M", 1000),
         ("CM", 900),
@@ -16,3 +15,10 @@ def int_to_roman(num: int) -> str:
         ("IV", 4),
         ("I", 1)
     ]
+
+    result = ""
+    for symbol, value in roman_map:
+        while num >= value:
+            result += symbol
+            num -= value
+    return result
