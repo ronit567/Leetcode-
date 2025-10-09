@@ -30,7 +30,7 @@ def myAtoi(s: str) -> int:
     # 3) read digits (ignore leading zeros explicitly)
     #    stop at first non-digit
     num_started = False
-    value = 0
+    placeholder = 0
 
     # skip leading zeros in the numeric portion
     while i < n and s[i] == '0':
@@ -41,10 +41,10 @@ def myAtoi(s: str) -> int:
     while i < n and s[i].isdigit():
         num_started = True
         digit = ord(s[i]) - ord('0')
-        value = value * 10 + digit
+        placeholder = placeholder * 10 + digit
         i += 1
 
     if not num_started:
         return 0
 
-    return sign * value
+    return sign * placeholder
