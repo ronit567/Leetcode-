@@ -6,7 +6,10 @@ class Solution:
         anagrams = defaultdict(list)
         
         for s in strs:
-            key = ''.join(sorted(s))
+            count = [0] * 26  # for lowercase letters
+            for c in s:
+                count[ord(c) - ord('a')] += 1
+            key = tuple(count)  # tuples can be dictionary keys
             anagrams[key].append(s)
         
         return list(anagrams.values())
