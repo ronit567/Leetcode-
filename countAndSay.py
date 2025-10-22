@@ -1,4 +1,6 @@
 def countAndSay(n):
+    if n < 1 or n > 30:
+        raise ValueError("n must be between 1 and 30 inclusive.")
     if n == 1:
         return "1"
     
@@ -15,3 +17,4 @@ def countAndSay(n):
     result += str(count) + prev[-1]
     
     return result
+
